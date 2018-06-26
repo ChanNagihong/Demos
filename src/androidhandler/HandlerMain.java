@@ -35,19 +35,18 @@ public class HandlerMain {
             }
         };
 
-        Message message1 = new Message(0, "I am the first message!");
-        WorkThread workThread1 = new WorkThread(handler, message1);
-
-        Message message2 = new Message(1, "I am the second message!");
-        WorkThread workThread2 = new WorkThread(handler, message2);
-
-        Message message3 = new Message(34, "I am a message!");
-        WorkThread workThread3 = new WorkThread(handler, message3);
-
-        workThread1.start();
-        workThread2.start();
-
-        workThread3.start();
+//        Message message1 = new Message(0, "I am the first message!");
+//        WorkThread workThread1 = new WorkThread(handler, message1);
+//        Message message2 = new Message(1, "I am the second message!");
+//        WorkThread workThread2 = new WorkThread(handler, message2);
+//        Message message3 = new Message(34, "I am a message!");
+//        WorkThread workThread3 = new WorkThread(handler, message3);
+//        workThread1.start();
+//        workThread2.start();
+//        workThread3.start();
+        for(int i=0; i<100; i++) {
+            handler.sendMessage(new Message(i, String.format("message: %d", i)));
+        }
     }
     /**模拟工作线程**/
     public static class WorkThread extends Thread {
