@@ -46,6 +46,7 @@ public class HandlerMain {
 
         workThread1.start();
         workThread2.start();
+
         workThread3.start();
     }
     /**模拟工作线程**/
